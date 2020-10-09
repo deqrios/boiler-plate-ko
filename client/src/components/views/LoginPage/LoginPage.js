@@ -27,6 +27,8 @@ function LoginPage(props) {
             password: Password,
         };
 
+        // => submit이벤트가 발생하면, dispatch로 login-action에 현재 email,password를 담은 body를 담아 전달.
+        // => 응답에 따라 Landing페이지로 이동하거나, Error창을 띄움.
         dispatch(loginUser(body)).then((response) => {
             if (response.payload.loginSuccess) {
                 props.history.push("/");

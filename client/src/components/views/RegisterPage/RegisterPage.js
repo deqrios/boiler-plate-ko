@@ -39,6 +39,8 @@ function RegisterPage(props) {
             password: Password,
         };
 
+        // => submit이벤트 발생 시, 이메일,이름,비밀번호 정보를 담은 body객체를 parameter로 보내고,
+        // => 회원가입에 성공하면 Login페이지로 이동, 실패하면 Error창 띄움.
         dispatch(registerUser(body)).then((response) => {
             if (response.payload.success) {
                 props.history.push("/login");

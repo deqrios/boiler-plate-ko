@@ -1,8 +1,9 @@
-const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
+const mongoose = require("mongoose"); //  MongoDB기반의 node.js용 ODM(Object Data Mapping) 라이브러리. (document -> JS object)
+const bcrypt = require("bcrypt"); //    민감한 정보를 해시처리 하기위한 라이브러리.
 const saltRounds = 10;
-const jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken"); //  token을 발급해서, 인증처리를 쉽게 하는 라이브러리.
 
+// * DB 스키마를 지정.
 const userSchema = mongoose.Schema({
     name: {
         type: String,
